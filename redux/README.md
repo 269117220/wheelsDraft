@@ -1,6 +1,6 @@
 # tip
 - 事件的注册 & 获取句柄用于注销事件
-- compose对中间件的组合`装饰者模式 & 洋葱圈`
+- `装饰者模式 & 洋葱圈`，compose对中间件的组合
 - react的HOC应用
 ```
 class Input extend Component {
