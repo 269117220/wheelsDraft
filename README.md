@@ -1,1 +1,2 @@
-# demo
+# demo清单
+- redux

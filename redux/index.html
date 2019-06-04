@@ -1,0 +1,60 @@
+<html>
+    <script src="index.js"></script>
+<body>
+    <p>当前值：<span id="result"></span></p>
+    <button id="add">加一</button>
+    <button id="minus">减一</button><br/><br/><br/>
+    ************* 操作历史 *************
+    <div id="history"></div>
+</body>
+<script>
+    let addNode = document.getElementById('add')
+    let minusNode = document.getElementById('minus')
+    let resultNode = document.getElementById('result')
+    let historyNode = document.getElementById('history')
+    //初始化
+    resultNode.innerHTML = store.getState();
+    //订阅事件
+    store.subscribe(() => {
+        resultNode.innerHTML = store.getState();
+    });
+    store.subscribe(() => {
+        historyNode.innerHTML = '';
+        (store.getHistoryState() || []).forEach(item => {
+            historyNode.innerHTML += `${item.action}&emsp;&emsp;${item.state}<br/>`
+        });
+    });
+    //
+    addNode.onclick = () => {
+        store.dispatch('add');
+    }
+    minusNode.onclick = () => {
+        store.dispatch('minus');
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
