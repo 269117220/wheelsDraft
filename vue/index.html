@@ -1,0 +1,21 @@
+<html>
+    <body>
+        【3秒后模拟js操作data的效果】
+        <div id="app">
+            <p>{{msg}}</p>
+            <input v-modal={msg} />
+        </div>
+    </body>
+	<script src="./lib/observer.js"></script>
+	<script src="./lib/watcher.js"></script>
+	<script src="./lib/compile.js"></script>
+	<script src="./lib/index.js"></script>
+    <script>
+        new Vue({
+            el: 'app',
+            data: {
+                msg: '初始信息~'
+            }
+        });
+    </script>
+</html>
